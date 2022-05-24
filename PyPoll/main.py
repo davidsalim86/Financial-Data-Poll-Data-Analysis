@@ -61,7 +61,7 @@ with open (poll_csv) as csvfile:
         elif max_count == countcandidate4:
             winner = candidatename[3]
             
-            #print analysis to terminal    
+    #print analysis to terminal    
     print (f"Election Results")
     print (f"-------------------------")
     print (f"Total Votes: {count}")
@@ -73,3 +73,21 @@ with open (poll_csv) as csvfile:
     print (f"-------------------------")
     print (f"Winner: {winner}")
     print (f"-------------------------")
+    
+# Specify the file to write and open using write mode
+output_path = os.path.join("Analysis", "Analysis.txt")
+with open(output_path, "w") as f:
+    
+    #write analysis in a text file
+    f.write("Election Results\n") 
+    f.write("-------------------------\n")
+    f.write("Total Votes:" " " f"{count}\n")
+    f.write("-------------------------\n")
+    f.write(f"{candidatename [0]}" ": " f"{percentformat1}" " " f"({countcandidate1})\n")
+    f.write(f"{candidatename [1]}" ": " f"{percentformat2}" " " f"({countcandidate2})\n")
+    f.write(f"{candidatename [2]}" ": " f"{percentformat3}" " " f"({countcandidate3})\n")
+    f.write(f"{candidatename [3]}" ": " f"{percentformat4}" " " f"({countcandidate4})\n")
+    f.write("-------------------------\n")
+    f.write("Winner:" " " f"{winner}\n")
+    f.write("-------------------------\n")
+    
